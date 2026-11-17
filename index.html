@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#26133f" />
+  <title>Birthday Magic 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div id="confetti-layer" aria-hidden="true"></div>
+
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Birthday Magic home"><span>✦</span> Birthday Magic</a>
+      <span class="top-note">A little surprise, made with love</span>
+    </header>
+
+    <section class="hero" id="welcome-screen">
+      <div class="eyebrow"><span class="sparkle">✧</span> A SPECIAL DAY IS HERE <span class="sparkle">✧</span></div>
+      <div class="hero-icon" aria-hidden="true">🎁</div>
+      <h1>Make someone's day<br><span>a little more magical.</span></h1>
+      <p class="intro">Create a birthday surprise for anyone. Just add their name and let the celebration begin!</p>
+
+      <form id="birthday-form" class="name-card">
+        <label for="person-name">Who are we celebrating?</label>
+        <div class="input-row">
+          <input id="person-name" type="text" maxlength="35" placeholder="Enter their name..." autocomplete="off" />
+          <button class="primary-button" type="submit">Celebrate <span>✦</span></button>
+        </div>
+        <p class="input-hint">You can make a fresh surprise for someone else anytime.</p>
+      </form>
+      <div class="mini-decor" aria-hidden="true"><span>🎈</span><span>✨</span><span>🎂</span><span>💜</span></div>
+    </section>
+
+    <section class="celebration hidden" id="celebration-screen" aria-live="polite">
+      <button class="back-button" id="back-button" type="button">← Make another wish</button>
+      <div class="celebration-label">TODAY IS ALL ABOUT YOU</div>
+      <div class="cake-wrap">
+        <div class="cake-emoji" aria-hidden="true">🎂</div>
+        <div class="cake-glow"></div>
+      </div>
+      <p class="tiny-kicker">A little note for</p>
+      <h2 class="birthday-title">Happy Birthday,<br><span id="display-name">You</span>!</h2>
+      <p class="birthday-message">May your day be filled with laughter, lovely surprises, and moments worth remembering. Here's to a wonderful year ahead! 💖</p>
+      <div class="wish-line"><span>✧</span> Make a wish. Enjoy your day. <span>✧</span></div>
+
+      <div class="celebration-actions">
+        <button class="primary-button" id="confetti-button" type="button">Celebrate again 🎉</button>
+        <button class="secondary-button" id="music-button" type="button" aria-pressed="false">♫ Play celebration tune</button>
+      </div>
+
+      <div class="share-card">
+        <div>
+          <strong>Share this surprise</strong>
+          <p>Send a personalized birthday link on WhatsApp.</p>
+        </div>
+        <div class="share-actions">
+          <button class="secondary-button" id="copy-button" type="button">Copy link</button>
+          <button class="whatsapp-button" id="whatsapp-button" type="button">Share on WhatsApp ↗</button>
+        </div>
+        <p class="status-message" id="status-message" role="status"></p>
+      </div>
+    </section>
+
+    <footer>Made to spread smiles <span>♥</span> Birthday Magic</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

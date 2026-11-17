@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+  --ink: #fff8ff;
+  --muted: #d8c9e8;
+  --pink: #ff83c5;
+  --purple: #b99aff;
+  --gold: #ffd98a;
+  --panel: rgba(255,255,255,.09);
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body {
+  margin: 0; min-height: 100vh; overflow-x: hidden; color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  background: radial-gradient(ellipse at 50% 5%, #56316f 0%, #29183f 42%, #160f2b 100%);
+}
+.ambient { position: fixed; width: 360px; height: 360px; border-radius: 50%; filter: blur(90px); opacity: .22; pointer-events: none; }
+.ambient-one { background: #f05da9; top: 10%; left: -180px; }
+.ambient-two { background: #8069ff; right: -180px; bottom: 0; }
+.page-shell { width: min(100% - 36px, 980px); min-height: 100vh; margin: auto; display: flex; flex-direction: column; position: relative; z-index: 1; }
+.topbar { height: 82px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.12); }
+.brand { color: white; text-decoration: none; font-weight: 700; letter-spacing: .2px; font-size: 18px; }
+.brand span { color: var(--gold); margin-right: 7px; }
+.top-note { color: #cbb9dd; font-size: 12px; letter-spacing: .4px; }
+.hero, .celebration { text-align: center; width: 100%; margin: auto 0; padding: 58px 0 48px; animation: rise .8s ease both; }
+.eyebrow, .celebration-label { color: var(--gold); font-size: 11px; letter-spacing: 3px; font-weight: 700; }
+.sparkle { color: var(--pink); font-size: 18px; padding: 0 8px; }
+.hero-icon { font-size: 58px; margin: 24px 0 12px; filter: drop-shadow(0 12px 20px rgba(0,0,0,.25)); animation: float 3s ease-in-out infinite; }
+h1, h2 { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -.8px; }
+h1 { font-size: clamp(40px, 7vw, 68px); line-height: 1.08; margin: 0; }
+h1 span { color: var(--pink); }
+.intro { max-width: 540px; margin: 18px auto 30px; color: var(--muted); line-height: 1.7; font-size: 15px; }
+.name-card { width: min(100%, 590px); margin: auto; padding: 22px; border: 1px solid rgba(255,255,255,.18); border-radius: 18px; background: var(--panel); box-shadow: 0 18px 55px rgba(0,0,0,.18); backdrop-filter: blur(12px); text-align: left; }
+.name-card label { display: block; font-size: 13px; font-weight: 600; margin: 0 0 10px 3px; }
+.input-row { display: flex; gap: 10px; }
+input { min-width: 0; flex: 1; height: 52px; border: 1px solid rgba(255,255,255,.2); border-radius: 10px; background: rgba(18,10,34,.55); color: white; padding: 0 15px; font: inherit; outline: none; }
+input::placeholder { color: #a99ab9; }
+input:focus { border-color: var(--pink); box-shadow: 0 0 0 3px rgba(255,131,197,.13); }
+.primary-button, .secondary-button, .whatsapp-button, .back-button { border: 0; border-radius: 10px; padding: 0 18px; min-height: 48px; font: 700 13px 'DM Sans', sans-serif; cursor: pointer; transition: transform .2s, filter .2s, background .2s; }
+.primary-button { color: #34172f; background: linear-gradient(110deg, #ffb1d9, #ffd98a); box-shadow: 0 8px 24px rgba(255,131,197,.2); }
+.primary-button:hover, .secondary-button:hover, .whatsapp-button:hover { transform: translateY(-2px); filter: brightness(1.06); }
+.primary-button span { padding-left: 7px; }
+.input-hint { margin: 11px 2px 0; color: #b9a9c9; font-size: 11px; }
+.mini-decor { display: flex; justify-content: center; gap: 30px; margin-top: 35px; font-size: 22px; }
+.mini-decor span:nth-child(odd) { animation: float 3.5s ease-in-out infinite; }
+.mini-decor span:nth-child(even) { animation: float 4s ease-in-out infinite reverse; }
+.hidden { display: none !important; }
+.celebration { padding-top: 35px; }
+.back-button { display: block; margin: 0 auto 28px; min-height: 35px; color: #d7c7e7; background: transparent; font-weight: 500; }
+.back-button:hover { color: white; }
+.cake-wrap { position: relative; width: 150px; height: 125px; margin: 16px auto 8px; display: grid; place-items: center; }
+.cake-emoji { font-size: 88px; position: relative; z-index: 1; animation: cake-bounce 2s ease-in-out infinite; filter: drop-shadow(0 12px 20px rgba(255,129,190,.18)); }
+.cake-glow { position: absolute; width: 115px; height: 45px; bottom: 0; background: #ff8fc8; filter: blur(35px); opacity: .38; }
+.tiny-kicker { color: var(--muted); font-size: 13px; margin: 10px 0 4px; }
+.birthday-title { font-size: clamp(40px, 8vw, 70px); line-height: 1.08; margin: 0; }
+.birthday-title span { color: var(--pink); }
+.birthday-message { color: var(--muted); max-width: 540px; margin: 18px auto; line-height: 1.75; font-size: 15px; }
+.wish-line { color: var(--gold); font-size: 12px; letter-spacing: 1px; }
+.wish-line span { color: var(--pink); padding: 0 8px; }
+.celebration-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 26px 0; }
+.secondary-button { color: white; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); }
+.share-card { width: min(100%, 590px); margin: 30px auto 0; padding: 19px 20px; text-align: left; border: 1px solid rgba(255,255,255,.16); border-radius: 15px; background: rgba(255,255,255,.07); }
+.share-card strong { font-size: 14px; }
+.share-card p { color: #c5b5d5; font-size: 12px; margin: 5px 0 0; }
+.share-actions { display: flex; gap: 9px; margin-top: 14px; }
+.share-actions button { min-height: 40px; }
+.whatsapp-button { color: #102b1c; background: #9be7b2; }
+.status-message { min-height: 14px; }
+footer { text-align: center; padding: 22px 0 26px; color: #a999ba; font-size: 11px; letter-spacing: .5px; }
+footer span { color: var(--pink); padding: 0 4px; }
+.confetti { position: fixed; top: -15px; width: 8px; height: 13px; border-radius: 2px; z-index: 5; pointer-events: none; animation: fall linear forwards; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-12px) rotate(4deg); } }
+@keyframes cake-bounce { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-9px) rotate(2deg); } }
+@keyframes fall { to { transform: translate(var(--drift), 110vh) rotate(760deg); opacity: .85; } }
+@media (max-width: 600px) {
+  .page-shell { width: min(100% - 28px, 980px); }
+  .topbar { height: 68px; }
+  .top-note { font-size: 10px; }
+  .hero, .celebration { padding: 48px 0 35px; }
+  .input-row { flex-direction: column; }
+  .input-row .primary-button { min-height: 50px; }
+  .name-card { padding: 18px; }
+  .share-actions { flex-direction: column; }
+  .share-actions button { width: 100%; }
+}
